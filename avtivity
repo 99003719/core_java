@@ -1,0 +1,123 @@
+package com.ltts;
+
+import java.util.Scanner;
+ class Vehi
+{
+
+	protected String make;
+	protected String vehicleno;
+	protected String fueltype;
+	protected int fuelcapacity;
+	protected int cc;
+
+
+
+
+public String getMake()
+{
+	return make;
+}
+public void setMake(String Make)
+{
+	this.make=make;
+}
+	
+
+
+public String getVehicleno()
+{
+	return vehicleno;
+}
+
+public void setVehicleno(String Vehicleno)
+{
+	this.vehicleno=vehicleno;
+}
+
+public String getFueltype()
+{
+	return fueltype;
+}
+public void setFueltype(String Fueltype)
+{
+	this.fueltype=fueltype;
+}
+
+public int getFuelcapacity()
+{
+	return fuelcapacity;
+}
+public void setFuelcapacity(int Fuelcapacity)
+{
+	this.fuelcapacity=fuelcapacity;
+}
+
+public int getCc()
+{
+	return cc;
+}
+public void setCc(int Cc)
+{
+	this.cc=cc;
+}
+
+public Vehi(String make,String vehicleno,String fueltype,int fuelcapacity,int cc)
+{
+this.make=make;
+this.vehicleno=vehicleno;
+this.fueltype=fueltype;
+this.fuelcapacity=fuelcapacity;
+this.cc=cc;
+}
+void displayMake()
+{
+	System.out.println("Make:"+(this.make));
+}
+void displayBasicinfo()
+{
+	System.out.println("****"+(this.getMake())+"****");
+	System.out.println("----Basic Information ----");
+	System.out.println("Vehicle Number:"+(this.vehicleno));
+	System.out.println("Fuel Capacity:"+(this.fuelcapacity));
+	System.out.println("Fuel Type:"+(this.fueltype));
+	System.out.println("CC:"+(this.cc));
+}
+void displayDetailInfo()
+{
+	
+}
+}
+class TwoWheeler extends Vehicle
+{
+	private boolean kickStartAvailable;
+	
+	public boolean isKickStartAvailable() {
+		return kickStartAvailable;
+	}
+
+
+
+	public void setKickStartAvailable(boolean kickStartAvailable) {
+		this.kickStartAvailable = kickStartAvailable;
+	}
+
+
+
+	public TwoWheeler(String make,String vehicleno,String fueltype,int fuelcapacity,int cc,boolean kickStartAvailable) {
+		super(make, vehicleno, fueltype, fuelcapacity, cc);
+
+		this.kickStartAvailable=kickStartAvailable;
+	}
+
+void displayDetailinfo()
+	{
+		if(kickStartAvailable)
+		{
+			System.out.println("Kick Start Available:YES");
+		}
+		else
+		{
+			System.out.println("Kick Start Not Available:NO");
+		}
+	}
+}
